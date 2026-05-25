@@ -527,6 +527,12 @@ a:hover {
     background-color: var(--color-light-gray);
 }
 
+.Sophie {
+    text-align: center;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
 .card__header h3 {
     margin: 0;
 }
