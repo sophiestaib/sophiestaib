@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <!-- Meta-Tags für Barrierefreiheit und SEO -->
+    <!-- Meta-Tags for Accessibility and SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-          content="HUERTA - Nachhaltige, saisonale und vegane Ernährung. Entdecke Rezepte, Inspiration und unseren nachhaltigen Kalender.">
-    <meta name="keywords" content="vegan, saisonal, nachhaltig, bio, rezepte">
+          content="HUERTA - Sustainable, seasonal, and vegan nutrition. Discover recipes, inspiration, and our sustainable calendar.">
+    <meta name="keywords" content="vegan, seasonal, sustainable, organic, recipes">
     <meta name="author" content="HUERTA">
     <meta name="theme-color" content="#2d5016">
 
-    <title>HUERTA – Nachhaltige Saisonale Vegane Ernährung</title>
+    <title>HUERTA – Sustainable Seasonal Vegan Nutrition</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -20,40 +20,40 @@
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌱</text></svg>">
 </head>
 <body>
-<!-- Skip-to-Content Link für Barrierefreiheit -->
-<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<!-- Skip-to-Content Link for Accessibility -->
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <div id="app">
     <!-- ============================================
-         HEADER & NAVIGATION (Semantische Tags)
+         HEADER & NAVIGATION (Semantic Tags)
          ============================================ -->
     <header class="header" role="banner">
         <div class="container header__container">
             <!-- Logo -->
             <div class="header__logo">
                 <h1>
-                    <a href="/" title="HUERTA - Startseite">
+                    <a href="/" title="HUERTA - Home">
                         <span aria-hidden="true">🌱</span> HUERTA
                     </a>
                 </h1>
             </div>
 
-            <!-- Hauptnavigation -->
-            <nav class="header__nav" role="navigation" aria-label="Hauptnavigation">
+            <!-- Main Navigation -->
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
                 <ul>
                     <li>
                         <a href="/" class="nav-link active" aria-current="page">
-                            Startseite
+                            Home
                         </a>
                     </li>
                     <li>
                         <a href="/seasonal-calendar" class="nav-link">
-                            Saisonkalender
+                            Seasonal Calendar
                         </a>
                     </li>
                     <li>
                         <a href="/recipes" class="nav-link">
-                            Rezepte
+                            Recipes
                         </a>
                     </li>
                     <li>
@@ -63,7 +63,7 @@
                     </li>
                     <li>
                         <a href="/about" class="nav-link">
-                            Über uns
+                            About Us
                         </a>
                     </li>
                 </ul>
@@ -72,55 +72,55 @@
     </header>
 
     <!-- ============================================
-         HAUPTINHALT (Semantische Main-Section)
+         MAIN CONTENT (Semantic Main-Section)
          ============================================ -->
     <main class="main-content" id="main-content" role="main">
-        <!-- Hero-Bereich -->
+        <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="container">
-                <h2 id="hero-title">Nachhaltig. Saisonal. Vegan.</h2>
+                <h2 id="hero-title">Sustainable. Seasonal. Vegan.</h2>
 
                 <p class="hero__subtitle">
-                    Willkommen bei HUERTA – deiner Plattform für bewusste Ernährung im Einklang mit der Natur.
-                    Entdecke saisonale Rezepte, einen praktischen Kalender und hochwertige nachhaltige Produkte.
+                    Welcome to HUERTA – your platform for conscious nutrition in harmony with nature.
+                    Discover seasonal recipes, a practical calendar, and high-quality sustainable products.
                 </p>
 
                 <!-- Call-to-Action Buttons -->
                 <div class="hero__cta">
-                    <a href="/seasonal-calendar" class="btn btn--primary btn--large" title="Zum Saisonkalender">
-                        🗓️ Saisonkalender erkunden
+                    <a href="/seasonal-calendar" class="btn btn--primary btn--large" title="Go to seasonal calendar">
+                        🗓️ Explore Seasonal Calendar
                     </a>
-                    <a href="/shop" class="btn btn--secondary btn--large" title="Zum Shop">
-                        🛍️ Shop besuchen
+                    <a href="/shop" class="btn btn--secondary btn--large" title="Go to shop">
+                        🛍️ Visit Shop
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Feature-Übersicht -->
+        <!-- Feature Overview -->
         <section class="features" aria-labelledby="features-title">
             <div class="container">
-                <h2 id="features-title">Warum HUERTA?</h2>
+                <h2 id="features-title">Why HUERTA?</h2>
                 <div class="grid grid--3">
                     <article class="card">
                         <div class="card__body">
-                            <h3>🌍 Nachhaltig</h3>
-                            <p>Wir setzen auf umweltfreundliche Produkte und vegane Rezepte, die deinen ökologischen
-                                Fußabdruck reduzieren.</p>
+                            <h3>🌍 Sustainable</h3>
+                            <p>We focus on eco-friendly products and vegan recipes that reduce your ecological
+                                footprint.</p>
                         </div>
                     </article>
                     <article class="card">
                         <div class="card__body">
-                            <h3>📅 Saisonal</h3>
-                            <p>Unser Saisonkalender zeigt dir, welche Obst- und Gemüsesorten gerade Saison haben – für
-                                frische, lokale Zutaten.</p>
+                            <h3>📅 Seasonal</h3>
+                            <p>Our seasonal calendar shows you which fruits and vegetables are in season – for
+                                fresh, local ingredients.</p>
                         </div>
                     </article>
                     <article class="card">
                         <div class="card__body">
                             <h3>🍃 Vegan</h3>
-                            <p>Alle unsere Rezepte sind 100% vegan und vollgepackt mit Nährstoffen für ein gesundes
-                                Leben.</p>
+                            <p>All our recipes are 100% vegan and packed with nutrients for a healthy
+                                life.</p>
                         </div>
                     </article>
                 </div>
@@ -129,19 +129,18 @@
     </main>
 
     <!-- ============================================
-         FOOTER (Semantische Footer-Section)
+         FOOTER (Semantic Footer-Section)
          ============================================ -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <!-- Footer Content Grid -->
             <div class="footer__content">
-                <!-- Über HUERTA -->
+                <!-- About HUERTA -->
                 <div class="footer__section">
                     <h3>HUERTA</h3>
                     <p>
-                        Nachhaltige, saisonale und vegane Ernährung für ein harmonisches Leben im Einklang mit der
-                        Natur.
-                        Entdecke die Schönheit saisonaler Zutaten.
+                        Sustainable, seasonal, and vegan nutrition for a harmonious life in harmony with nature.
+                        Discover the beauty of seasonal ingredients.
                     </p>
                 </div>
 
@@ -149,30 +148,30 @@
                 <nav class="footer__section" aria-label="Footer Navigation">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="/">Startseite</a></li>
-                        <li><a href="/seasonal-calendar">Saisonkalender</a></li>
-                        <li><a href="/recipes">Rezepte</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/seasonal-calendar">Seasonal Calendar</a></li>
+                        <li><a href="/recipes">Recipes</a></li>
                         <li><a href="/shop">Shop</a></li>
-                        <li><a href="/about">Über uns</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </nav>
 
-                <!-- Rechtliches & Kontakt -->
-                <nav class="footer__section" aria-label="Rechtliche Links">
-                    <h3>Rechtliches</h3>
+                <!-- Legal & Contact -->
+                <nav class="footer__section" aria-label="Legal Links">
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="/contact" title="Kontaktformular">Kontakt</a></li>
-                        <li><a href="/impressum" title="Rechtliche Informationen">Impressum</a></li>
-                        <li><a href="/privacy" title="Datenschutzerklärung">Datenschutz</a></li>
-                        <li><a href="/terms" title="Nutzungsbedingungen">AGB</a></li>
+                        <li><a href="/contact" title="Contact Form">Contact</a></li>
+                        <li><a href="/impressum" title="Legal Information">Legal Info</a></li>
+                        <li><a href="/privacy" title="Privacy Policy">Privacy</a></li>
+                        <li><a href="/terms" title="Terms of Service">Terms</a></li>
                     </ul>
                 </nav>
             </div>
 
             <!-- Footer Bottom -->
             <div class="footer__bottom">
-                <p>&copy; <span id="year"></span> HUERTA. Alle Rechte vorbehalten.</p>
-                <p>Entwickelt mit 🌱 für eine nachhaltige Zukunft.</p>
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
+                <p>Developed with 🌱 for a sustainable future.</p>
             </div>
         </div>
     </footer>

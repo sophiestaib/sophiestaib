@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +13,20 @@
         <div class="container header__container">
             <div class="header__logo">
                 <h1>
-                    <a href="/" title="Zur Startseite">
+                    <a href="/" title="Go to home">
                         <span aria-hidden="true">🌱</span> HUERTA
                     </a>
                 </h1>
             </div>
-            <nav class="header__nav" role="navigation" aria-label="Hauptnavigation">
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="/" class="nav-link">Startseite</a></li>
-                    <li><a href="/seasonal-calendar" class="nav-link">Saisonkalender</a></li>
-                    <li><a href="/recipes" class="nav-link">Rezepte</a></li>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/seasonal-calendar" class="nav-link">Seasonal Calendar</a></li>
+                    <li><a href="/recipes" class="nav-link">Recipes</a></li>
                     <li><a href="/shop" class="nav-link active" aria-current="page">Shop</a></li>
-                    <li><a href="/about" class="nav-link">Über uns</a></li>
+                    <li><a href="/about" class="nav-link">About Us</a></li>
                     <li>
-                        <a href="/cart" class="nav-link cart-link" title="Warenkorb">
+                        <a href="/cart" class="nav-link cart-link" title="Shopping Cart">
                             🛒 <span class="cart-count" id="cart-count">0</span>
                         </a>
                     </li>
@@ -38,86 +38,86 @@
     <!-- Main Content -->
     <main class="main-content" id="main-content" role="main">
         <div class="container">
-            <h1>Shop – HUERTA Produkte</h1>
-            <p class="lead">Entdecke unsere Kollektion nachhaltiger Produkte für bewusste Ernährung.</p>
+            <h1>Shop – HUERTA Products</h1>
+            <p class="lead">Discover our collection of sustainable products for conscious nutrition.</p>
 
-            <!-- Benachrichtigungen -->
+            <!-- Notifications -->
             <div id="notification"></div>
 
-            <!-- Produkte Grid -->
+            <!-- Products Grid -->
             <section class="shop-products" aria-labelledby="products-title">
-                <h2 id="products-title" class="sr-only">Verfügbare Produkte</h2>
+                <h2 id="products-title" class="sr-only">Available Products</h2>
                 <div class="grid grid--3">
-                    <!-- Produkt: Saisonkalender -->
+                    <!-- Product: Seasonal Calendar -->
                     <article class="product-card">
-                        <!-- Produktbild -->
+                        <!-- Product Image -->
                         <div class="product-card__image">
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect fill='%238bc34a' width='300' height='400'/%3E%3Ctext x='150' y='150' font-size='60' fill='white' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%93%85%3C/text%3E%3Ctext x='150' y='250' font-size='24' fill='white' text-anchor='middle'%3EHUERTA%3C/text%3E%3Ctext x='150' y='280' font-size='16' fill='white' text-anchor='middle'%3ESaisonkalender%3C/text%3E%3C/svg%3E"
-                                 alt="HUERTA Saisonkalender - Nachhaltiger Wandkalender"
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect fill='%238bc34a' width='300' height='400'/%3E%3Ctext x='150' y='150' font-size='60' fill='white' text-anchor='middle' dominant-baseline='central'%3E%F0%9F%93%85%3C/text%3E%3Ctext x='150' y='250' font-size='24' fill='white' text-anchor='middle'%3EHUERTA%3C/text%3E%3Ctext x='150' y='280' font-size='16' fill='white' text-anchor='middle'%3ESeasonal Calendar%3C/text%3E%3C/svg%3E"
+                                 alt="HUERTA Seasonal Calendar - Sustainable Wall Calendar"
                                  class="product-card__image-img">
                         </div>
 
-                        <!-- Produktinfo -->
+                        <!-- Product Info -->
                         <div class="product-card__body">
-                            <h3>HUERTA Saisonkalender 2026</h3>
+                            <h3>HUERTA Seasonal Calendar 2026</h3>
 
                             <p class="product-card__description">
-                                Unser hochwertiger Saisonkalender zeigt dir auf einen Blick,
-                                welche Obst- und Gemüsesorten gerade Saison haben.
-                                Mit schönen Illustrationen, praktischen Tipps und veganen Rezepten.
+                                Our high-quality seasonal calendar shows you at a glance
+                                which fruits and vegetables are in season.
+                                With beautiful illustrations, practical tips, and vegan recipes.
                             </p>
 
                             <div class="product-card__features">
                                 <ul>
-                                    <li>✅ 100% nachhaltiges Papier</li>
-                                    <li>✅ DIN A3 Wandkalender</li>
-                                    <li>✅ Mit Rezept-Tipps</li>
-                                    <li>✅ Deutsche Saisons</li>
+                                    <li>✅ 100% sustainable paper</li>
+                                    <li>✅ DIN A3 Wall Calendar</li>
+                                    <li>✅ With Recipe Tips</li>
+                                    <li>✅ Seasonal for Europe</li>
                                 </ul>
                             </div>
 
-                            <!-- Preis -->
+                            <!-- Price -->
                             <div class="product-card__price">
-                                <span class="price" aria-label="Preis: 19,90 Euro">€ 19,90</span>
+                                <span class="price" aria-label="Price: 19.90 Euros">€ 19,90</span>
                             </div>
 
                             <!-- Add to Cart Button -->
                             <form method="POST" action="/shop" class="add-to-cart-form">
                                 <input type="hidden" name="action" value="add_to_cart">
                                 <input type="hidden" name="product_id" value="1">
-                                <input type="hidden" name="product_name" value="HUERTA Saisonkalender 2026">
+                                <input type="hidden" name="product_name" value="HUERTA Seasonal Calendar 2026">
                                 <input type="hidden" name="product_price" value="19.90">
 
                                 <div class="product-card__quantity">
-                                    <label for="qty-1">Menge:</label>
+                                    <label for="qty-1">Quantity:</label>
                                     <input type="number" id="qty-1" name="quantity" value="1" min="1" max="10" required>
                                 </div>
 
                                 <button type="submit" class="btn btn--accent btn--block">
-                                    🛒 In den Warenkorb
+                                    🛒 Add to Cart
                                 </button>
                             </form>
                         </div>
                     </article>
 
-                    <!-- Weitere Produkte können hier hinzugefügt werden -->
+                    <!-- More products can be added here -->
                 </div>
             </section>
 
             <!-- Info Section -->
             <section class="shop-info mt-3xl" aria-labelledby="info-title">
-                <h2 id="info-title">Versand & Zahlungsarten</h2>
+                <h2 id="info-title">Shipping & Payment Methods</h2>
                 <div class="grid grid--2">
                     <div class="card">
                         <div class="card__body">
-                            <h3>📦 Versand</h3>
-                            <p>Kostenloser Versand ab € 30. Lieferzeit: 2-4 Werktage innerhalb Deutschlands.</p>
+                            <h3>📦 Shipping</h3>
+                            <p>Free shipping from € 30. Delivery time: 2-4 business days within Europe.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card__body">
-                            <h3>💳 Zahlungsarten</h3>
-                            <p>Wir akzeptieren Kreditkarte, PayPal, Überweisung und Sofortüberweisung.</p>
+                            <h3>💳 Payment Methods</h3>
+                            <p>We accept credit card, PayPal, bank transfer, and instant transfer.</p>
                         </div>
                     </div>
                 </div>
@@ -131,28 +131,28 @@
             <div class="footer__content">
                 <div class="footer__section">
                     <h3>HUERTA</h3>
-                    <p>Nachhaltige, saisonale und vegane Ernährung für ein harmonisches Leben mit der Natur.</p>
+                    <p>Sustainable, seasonal, and vegan nutrition for a harmonious life with nature.</p>
                 </div>
                 <nav class="footer__section" aria-label="Footer Navigation">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="/">Startseite</a></li>
-                        <li><a href="/seasonal-calendar">Saisonkalender</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/seasonal-calendar">Seasonal Calendar</a></li>
                         <li><a href="/shop">Shop</a></li>
-                        <li><a href="/about">Über uns</a></li>
+                        <li><a href="/about">About Us</a></li>
                     </ul>
                 </nav>
-                <nav class="footer__section" aria-label="Rechtliche Links">
-                    <h3>Rechtliches</h3>
+                <nav class="footer__section" aria-label="Legal Links">
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="/contact">Kontakt</a></li>
-                        <li><a href="/impressum">Impressum</a></li>
-                        <li><a href="/privacy">Datenschutz</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/impressum">Legal Info</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer__bottom">
-                <p>&copy; <span id="year"></span> HUERTA. Alle Rechte vorbehalten.</p>
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
             </div>
         </div>
     </footer>
