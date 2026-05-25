@@ -1,0 +1,175 @@
+/* Simple styles for the personality test */
+:root {
+    --bg: #f6f8fb;
+    --card: #fff;
+    --accent: #4b8bf5;
+    --muted: #6b7280
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Segoe UI, Roboto, Arial, sans-serif
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    color: #111
+}
+
+.container {
+    max-width: 840px;
+    margin: 28px auto;
+    padding: 20px
+}
+
+header h1 {
+    margin: 0 0 6px
+}
+
+.lead {
+    margin: 0 0 12px;
+    color: var(--muted)
+}
+
+#progress {
+    height: 8px;
+    background: #e6eefb;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 12px 0
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), #2fd1c5)
+}
+
+.section {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(29, 38, 60, .04);
+    margin-bottom: 12px
+}
+
+.section h2 {
+    margin: 0 0 6px
+}
+
+.section-desc {
+    margin: 0 0 12px;
+    color: var(--muted)
+}
+
+.questions .question {
+    margin: 10px 0;
+    padding: 8px;
+    border-left: 3px solid transparent
+}
+
+.question label {
+    display: block;
+    margin-bottom: 6px
+}
+
+.options {
+    display: flex;
+    gap: 8px
+}
+
+.options label {
+    background: #f3f6fb;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent
+}
+
+.options input {
+    display: none
+}
+
+.options input:checked + span {
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin: 10px 0
+}
+
+.controls button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer
+}
+
+.controls button#prevBtn {
+    background: #e5e7eb;
+    color: #111
+}
+
+.controls button.hidden {
+    display: none
+}
+
+#results {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 8px
+}
+
+.result-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0
+}
+
+.bar {
+    flex: 1;
+    height: 14px;
+    background: #eef3fc;
+    border-radius: 999px;
+    overflow: hidden
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4b8bf5, #2fd1c5)
+}
+
+.result-label {
+    width: 160px
+}
+
+.note {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+.hidden {
+    display: none
+}
+
+button#restartBtn {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 0;
+    background: #111;
+    color: #fff
+}
+
+@media (max-width: 520px) {
+    .result-label {
+        width: 120px
+    }
+}

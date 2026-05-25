@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HUERTA - Alimentación sostenible, estacional y vegana">
+    <title>HUERTA – Alimentación Sostenible</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <!-- HEADER & NAVIGATION -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="index.html" title="Ir a inicio">
+                        <span aria-hidden="true">🌱</span> HUERTA
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Inicio</a></li>
+                    <li><a href="pages/seasonal-calendar.html" class="nav-link">Calendario</a></li>
+                    <li><a href="pages/recipes.html" class="nav-link">Recetas</a></li>
+                    <li><a href="pages/shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="pages/about.html" class="nav-link">Nosotros</a></li>
+                    <li>
+                        <a href="pages/cart.html" class="nav-link cart-link" title="Carrito">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <!-- HERO SECTION -->
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="container">
+                    <h2 id="hero-title">Sostenible. Estacional. Vegano.</h2>
+
+                    <p class="hero__subtitle">
+                        Bienvenido a HUERTA – tu plataforma para una alimentación consciente en armonía con la
+                        naturaleza.
+                        Descubre recetas estacionales, un calendario práctico y productos sostenibles de alta calidad.
+                    </p>
+
+                    <!-- CTA BUTTONS -->
+                    <div class="hero__cta">
+                        <a href="pages/seasonal-calendar.html" class="btn btn--primary btn--large"
+                           title="Ir al calendario de temporada">
+                            📅 Explorar Calendario
+                        </a>
+                        <a href="pages/shop.html" class="btn btn--secondary btn--large" title="Ir a la tienda">
+                            🛍️ Visitar Shop
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEATURES -->
+            <section class="features" aria-labelledby="features-title">
+                <div class="container">
+                    <h2 id="features-title">¿Por qué HUERTA?</h2>
+                    <div class="grid grid--3">
+                        <article class="card">
+                            <div class="card__body">
+                                <h3>🌍 Sostenible</h3>
+                                <p>Ofrecemos productos ecológicos y recetas veganas que reducen tu huella de
+                                    carbono.</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card__body">
+                                <h3>📅 Estacional</h3>
+                                <p>Nuestro calendario muestra qué frutas y verduras están en temporada para ingredientes
+                                    frescos.</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <div class="card__body">
+                                <h3>🍃 Vegano</h3>
+                                <p>Todas nuestras recetas son 100% veganas y ricas en nutrientes para una vida
+                                    saludable.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Alimentación sostenible, estacional y vegana para una vida en armonía con la naturaleza.</p>
+                </div>
+                <nav class="footer__section" aria-label="Navegación footer">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="pages/seasonal-calendar.html">Calendario</a></li>
+                        <li><a href="pages/shop.html">Shop</a></li>
+                        <li><a href="pages/about.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Enlaces legales">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="pages/contact.html">Contacto</a></li>
+                        <li><a href="pages/about.html">Acerca de</a></li>
+                        <li><a href="pages/privacy.html">Privacidad</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartCount();
+</script>
+</body>
+</html>

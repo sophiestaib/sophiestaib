@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <!-- HEADER -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="../index.html" title="Ir a inicio">
+                        <span aria-hidden="true">🌱</span> HUERTA
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="seasonal-calendar.html" class="nav-link">Calendario</a></li>
+                    <li><a href="recipes.html" class="nav-link">Recetas</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="about.html" class="nav-link">Nosotros</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link active" aria-current="page" title="Carrito">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>🛒 Carrito de Compras</h1>
+
+            <div id="notification"></div>
+
+            <!-- CART CONTENT -->
+            <div id="cart-content">
+                <!-- Se llenará con JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Alimentación sostenible, estacional y vegana para una vida en armonía con la naturaleza.</p>
+                </div>
+                <nav class="footer__section" aria-label="Navegación footer">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="seasonal-calendar.html">Calendario</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Enlaces legales">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="contact.html">Contacto</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                        <li><a href="privacy.html">Privacidad</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    updateCartCount();
+    renderCart();
+</script>
+</body>
+</html>
