@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout (Client-side fallback) | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo"><h1><a href="../index.html"><img src="../assets/img/Asset%2016.png" width="80"
+                                                                       alt="HUERTA logo"></a></h1></div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>Checkout (Fallback)</h1>
+            <p class="lead">If your server cannot execute PHP (502 error), this client-side fallback will store the
+                order locally in your browser so you can continue testing.</p>
+
+            <div id="notification"></div>
+
+            <form id="checkout-form" class="form">
+                <div class="form-row">
+                    <div class="form-group"><label for="firstname">First Name *</label><input id="firstname"
+                                                                                              name="firstname" required>
+                    </div>
+                    <div class="form-group"><label for="lastname">Last Name *</label><input id="lastname"
+                                                                                            name="lastname" required>
+                    </div>
+                </div>
+                <div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email"
+                                                                                 required></div>
+                <div class="form-group"><label for="phone">Phone</label><input id="phone" name="phone"></div>
+                <div class="form-group"><label for="address">Address *</label><input id="address" name="address"
+                                                                                     required
+                                                                                     placeholder="Street and house number">
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="zip">Zip Code *</label><input id="zip" name="zip" required>
+                    </div>
+                    <div class="form-group"><label for="city">City *</label><input id="city" name="city" required></div>
+                </div>
+                <fieldset>
+                    <legend>Payment Method *</legend>
+                    <div class="form-group--radio"><label><input type="radio" name="payment" value="credit_card"
+                                                                 checked> Credit Card</label></div>
+                    <div class="form-group--radio"><label><input type="radio" name="payment" value="paypal">
+                        PayPal</label></div>
+                    <div class="form-group--radio"><label><input type="radio" name="payment" value="bank_transfer"> Bank
+                        Transfer</label></div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary btn--large">Complete Order</button>
+                    <a href="cart.html" class="btn btn--secondary">Edit Cart</a>
+                </div>
+            </form>
+
+            <section id="order-result" class="mt-xl"></section>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section"><h3>HUERTA</h3>
+                    <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p></div>
+                <nav class="footer__section" aria-label="Footer navigation"><h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Legal links"><h3>Legal</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom"><p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p></div>
+        </div>
+    </footer>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.huertaCart) huertaCart.updateCartCount();
+
+    function showResult(msg, success = true) {
+        const el = document.getElementById('order-result');
+        el.innerHTML = `<div class="alert ${success ? 'alert--success' : 'alert--error'}">${msg}</div>`;
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            firstname: form.firstname.value.trim(),
+            lastname: form.lastname.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim(),
+            address: form.address.value.trim(),
+            zip: form.zip.value.trim(),
+            city: form.city.value.trim(),
+            payment: form.payment.value
+        };
+
+        // Basic validation
+        if (!data.firstname || !data.lastname || !data.email) {
+            showResult('Please fill required fields (first name, last name, email).', false);
+            return;
+        }
+
+        // Get cart from client cart if available
+        let cart = [];
+        if (window.huertaCart && typeof window.huertaCart.getCart === 'function') cart = window.huertaCart.getCart();
+
+        // Try to POST to server-side checkout.php; if it fails (502), fallback to saving locally
+        const payload = new FormData();
+        Object.keys(data).forEach(k => payload.append(k, data[k]));
+        payload.append('cart_json', JSON.stringify(cart));
+
+        try {
+            const resp = await fetch('checkout.php', {method: 'POST', body: payload});
+            if (resp.ok) {
+                // If server responded, attempt to parse response text for confirmation
+                showResult('Order submitted to server successfully. If you saw a success message, the server saved the order.');
+                // clear client cart
+                if (window.huertaCart && typeof window.huertaCart.getCart === 'function') {
+                    localStorage.removeItem('huerta_cart_v1');
+                    huertaCart.updateCartCount();
+                }
+                return;
+            }
+            // non-ok response (e.g., 502), fall through to fallback
+        } catch (err) {
+            // network or CORS or gateway error -> fallback
+        }
+
+        // Fallback: save order locally in localStorage (for testing when PHP not available)
+        try {
+            const storageKey = 'huerta_local_orders_v1';
+            const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+            const orderId = 'LOCAL-' + Date.now();
+            const order = {id: orderId, timestamp: new Date().toISOString(), customer: data, cart: cart};
+            existing.push(order);
+            localStorage.setItem(storageKey, JSON.stringify(existing));
+            showResult('Server unavailable (502). Order saved locally in your browser for testing. Order ID: ' + orderId);
+            // clear client cart
+            if (window.huertaCart && typeof window.huertaCart.getCart === 'function') {
+                localStorage.removeItem('huerta_cart_v1');
+                huertaCart.updateCartCount();
+            }
+        } catch (err) {
+            showResult('Failed to save order locally: ' + err.message, false);
+        }
+    });
+</script>
+</body>
+</html>

@@ -653,12 +653,18 @@ a:hover {
     margin-bottom: var(--space-lg);
 }
 
+/* Footer heading correction: ensure h3 headings in footer are visible on dark background */
+.footer__section h3 {
+    color: var(--color-white);
+    margin-bottom: var(--space-lg);
+}
+
 .footer__section ul {
     list-style: none;
 }
 
 .footer__section a {
-    color: var(--color-text-secondary);
+    color: var(--color-cream);
     transition: color var(--transition-fast);
 }
 

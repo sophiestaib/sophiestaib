@@ -39,13 +39,29 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Formulardaten sammeln
+            // Collect form data
             const formData = new FormData(this);
-            const productName = formData.get('product_name');
-            const quantity = formData.get('quantity');
+            const productId = formData.get('product_id') || this.dataset.productId;
+            const productName = formData.get('product_name') || this.dataset.productName;
+            const productPrice = parseFloat(formData.get('product_price') || this.dataset.productPrice) || 0;
+            const quantity = parseInt(formData.get('quantity') || 1, 10) || 1;
 
-            // Form abschicken (normaler POST)
-            this.submit();
+            // If client-side cart is available, add item there
+            if (window.huertaCart && typeof window.huertaCart.addItem === 'function') {
+                window.huertaCart.addItem({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: quantity
+                });
+                // Optionally render cart if on cart page
+                if (window.location.pathname.endsWith('/cart.html') && typeof window.huertaCart.renderCart === 'function') {
+                    window.huertaCart.renderCart();
+                }
+            } else {
+                // Fallback: submit the form to server
+                this.submit();
+            }
         });
     });
 
