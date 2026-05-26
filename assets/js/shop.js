@@ -104,4 +104,57 @@ function formatPrice(price) {
     }).format(price);
 }
 
+
+// Simple carousel initialization for product carousels
+function initProductCarousels() {
+    document.querySelectorAll('.product-carousel').forEach(function (carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        const prev = carousel.querySelector('.carousel-prev');
+        const next = carousel.querySelector('.carousel-next');
+        const dotsContainer = carousel.querySelector('.carousel-dots');
+        let index = 0;
+
+        function goTo(i) {
+            index = (i + slides.length) % slides.length;
+            const offset = -index * 100;
+            track.style.transform = 'translateX(' + offset + '%)';
+            // update dots
+            Array.from(dotsContainer.children).forEach((d, idx) => d.classList.toggle('is-active', idx === index));
+        }
+
+        // create dots
+        slides.forEach((s, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'carousel-dot';
+            btn.type = 'button';
+            btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            btn.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(btn);
+        });
+
+        prev.addEventListener('click', () => goTo(index - 1));
+        next.addEventListener('click', () => goTo(index + 1));
+
+        // keyboard support
+        carousel.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') prev.click();
+            if (e.key === 'ArrowRight') next.click();
+        });
+
+        // autoplayer (optional)
+        let autoplay = true;
+        let interval = 5000;
+        if (autoplay) {
+            let timer = setInterval(() => goTo(index + 1), interval);
+            carousel.addEventListener('mouseenter', () => clearInterval(timer));
+            carousel.addEventListener('mouseleave', () => timer = setInterval(() => goTo(index + 1), interval));
+        }
+
+        // set initial
+        goTo(0);
+    });
+}
+
+initProductCarousels();
 console.log('✅ Shop-Modul geladen');

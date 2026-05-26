@@ -199,3 +199,117 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Carousel styles */
+.product-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-light);
+}
+
+.product-carousel .carousel-track {
+    display: flex;
+    transition: transform 300ms var(--transition-normal);
+    will-change: transform;
+}
+
+.product-carousel .carousel-slide {
+    flex: 0 0 100%;
+}
+
+.product-carousel .carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-carousel .carousel-prev,
+.product-carousel .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.product-carousel .carousel-prev {
+    left: 12px;
+}
+
+.product-carousel .carousel-next {
+    right: 12px;
+}
+
+.product-carousel .carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.product-carousel .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+}
+
+.product-carousel .carousel-dot.is-active {
+    background: var(--color-primary);
+}
+
+/* Banner / Hero helper styles */
+.banner {
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--color-white);
+}
+
+.banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+}
+
+.banner__content {
+    position: relative;
+    z-index: 2;
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.banner__title {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-2xl);
+}
+
+.banner__subtitle {
+    margin: 0;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        min-height: 220px;
+    }
+}
