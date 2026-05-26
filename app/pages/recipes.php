@@ -36,7 +36,7 @@
 
     <main class="main-content" id="main-content" role="main">
         <div class="container">
-            <h1>🍳 Vegane Saisonale Rezepte</h1>
+            <h1>Vegane Saisonale Rezepte</h1>
             <p class="lead">Leckere, gesunde Rezepte mit saisonalen Zutaten für das ganze Jahr.</p>
 
             <section class="recipes-section" aria-labelledby="recipes-title">
@@ -182,7 +182,7 @@
                     </div>
                     <div class="card">
                         <div class="card__body">
-                            <h3>🥗 Protein-Quellen</h3>
+                            <h3> Protein-Quellen</h3>
                             <p>Linsen, Kichererbsen, Tofu und Nüsse sind großartige vegane Protein-Quellen für
                                 ausgewogene Mahlzeiten.</p>
                         </div>
