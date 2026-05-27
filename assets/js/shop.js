@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     quantity: quantity
                 });
                 // Optionally render cart if on cart page
-                if (window.location.pathname.endsWith('/cart.html') && typeof window.huertaCart.renderCart === 'function') {
+                if (window.location.pathname.endsWith('/cart.php') && typeof window.huertaCart.renderCart === 'function') {
                     window.huertaCart.renderCart();
                 }
             } else {

@@ -77,7 +77,7 @@
                 <div class="cart-empty">
                     <h2>Your cart is empty</h2>
                     <p>There are no products in your cart yet.</p>
-                    <a href="shop.html" class="btn btn--primary btn--large">Go to Shop</a>
+                    <a href="shop.php" class="btn btn--primary btn--large">Go to Shop</a>
                 </div>`;
             return;
         }
@@ -130,7 +130,7 @@
                 </div>
                 <div class="cart-actions">
                     <a href="checkout.php" class="btn btn--primary btn--large">Proceed to Checkout ➜</a>
-                    <a href="shop.html" class="btn btn--secondary">Continue Shopping</a>
+                    <a href="shop.php" class="btn btn--secondary">Continue Shopping</a>
                 </div>
             </div>`;
 

@@ -51,14 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div id="app">
     <header class="header" role="banner">
         <div class="container header__container">
-            <div class="header__logo"><h1><a href="../index.html"><img src="../assets/img/Asset%2016.png" width="80"
+            <div class="header__logo"><h1><a href="../index.php"><img src="../assets/img/Asset%2016.png" width="80"
                                                                        alt="HUERTA logo"></a></h1></div>
             <nav class="header__nav" role="navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="recipes.php">Recipes</a></li>
+                    <li><a href="shop.php">Shop</a></li>
+                    <li><a href="cart.php">Cart</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php if ($saved): ?>
                 <div class="alert alert--success">✅ Order saved. Order ID:
                     <strong><?= htmlspecialchars($order['id']) ?></strong></div>
-                <p><a href="../index.html" class="btn btn--primary">Return to Home</a></p>
+                <p><a href="../index.php" class="btn btn--primary">Return to Home</a></p>
             <?php else: ?>
                 <?php if ($errors): ?>
                     <div class="alert alert--error"><strong>Errors:</strong>
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </fieldset>
                     <div class="form-actions">
                         <button type="submit" class="btn btn--primary btn--large">Complete Order</button>
-                        <a href="cart.html" class="btn btn--secondary">Edit Cart</a>
+                        <a href="cart.php" class="btn btn--secondary">Edit Cart</a>
                     </div>
                 </form>
             <?php endif; ?>
@@ -133,15 +133,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p></div>
                 <nav class="footer__section" aria-label="Footer navigation"><h3>Navigation</h3>
                     <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="recipes.html">Recipes</a></li>
-                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="recipes.php">Recipes</a></li>
+                        <li><a href="shop.php">Shop</a></li>
                     </ul>
                 </nav>
                 <nav class="footer__section" aria-label="Legal links"><h3>Legal</h3>
                     <ul>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="privacy.php">Privacy</a></li>
                     </ul>
                 </nav>
             </div>
