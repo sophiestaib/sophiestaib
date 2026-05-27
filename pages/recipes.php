@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <meta name="description" content="Seasonal vegan recipes by HUERTA - healthy, seasonal and sustainable dishes.">
+</head>
+<body>
+<div id="app">
+    <!-- HEADER -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="../index.php" title="Go to home">
+                        <img src="../assets/img/Asset%2016.png" width="80" alt="HUERTA logo">
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.php" class="nav-link">Home</a></li>
+                    <li><a href="recipes.php" class="nav-link active" aria-current="page">Recipes</a></li>
+                    <li><a href="shop.php" class="nav-link">Shop</a></li>
+                    <li><a href="about.php" class="nav-link">About Us</a></li>
+                    <li>
+                        <a href="cart.php" class="nav-link cart-link" title="Cart">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>Seasonal Vegan Recipes</h1>
+            <p class="lead">Delicious, healthy recipes made with seasonal ingredients.</p>
+n            <section class="recipes-grid" aria-labelledby="recipes-title">
+                <h2 id="recipes-title" class="sr-only">Recipes</h2>
+                <div class="grid grid--3">
+                    <!-- Placeholder recipe card 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238bc34a' width='400' height='300'/%3E%3Ctext x='200' y='160' font-size='64' fill='white' text-anchor='middle'%3E🍓%3C/text%3E%3C/text%3E%3C/svg%3E"
+                                 alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Garbanzos con Espinacas</h3>
+                            <p class="recipe-card__description">A quick, fresh tapas with spinach and
+                                chickpeas.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 40 min</span>
+                                <span>👥 3 servings</span>
+                                <span>⭐ Easy</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238bc34a' width='400' height='300'/%3E%3Ctext x='200' y='160' font-size='64' fill='white' text-anchor='middle'%3E🥗%3C/text%3E%3C/text%3E%3C/svg%3E"
+                                 alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Pasta Primavera</h3>
+                            <p class="recipe-card__description">A refreshing pasta salad with asparagus, tomatoes and
+                                zucchini.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 30 min</span>
+                                <span>👥 4 servings</span>
+                                <span>⭐ Easy</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238bc34a' width='400' height='300'/%3E%3Ctext x='200' y='160' font-size='64' fill='white' text-anchor='middle'%3E🥘%3C/text%3E%3C/text%3E%3C/svg%3E"
+                                 alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Zucchini Chickpeas Curry</h3>
+                            <p class="recipe-card__description">A warming, protein-rich curry with chickpeas and
+                                zucchini.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 45 min</span>
+                                <span>👥 5 servings</span>
+                                <span>⭐ Medium</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%238bc34a' width='400' height='300'/%3E%3Ctext x='200' y='160' font-size='64' fill='white' text-anchor='middle'%3E🥘%3C/text%3E%3C/text%3E%3C/svg%3E"
+                                 alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Zucchini Chickpeas Curry</h3>
+                            <p class="recipe-card__description">A warming, protein-rich curry with red lentils and
+                                spinach.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 25 min</span>
+                                <span>👥 4 servings</span>
+                                <span>⭐ Medium</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p>
+                </div>
+                <nav class="footer__section" aria-label="Footer navigation">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="recipes.php">Recipes</a></li>
+                        <li><a href="shop.php">Shop</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Legal links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../pages/contact.php">Contact</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="privacy.php">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.huertaCart) huertaCart.updateCartCount();
+</script>
+</body>
+</html>
