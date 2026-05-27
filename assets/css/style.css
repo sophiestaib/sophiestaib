@@ -4,7 +4,7 @@
    ============================================ */
 
 /* Importiere Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap');
+/* Typekit fonts are loaded via the HTML <link> to use.typekit.net */
 
 /* ============================================
    CSS-Variablen (:root)
@@ -42,7 +42,7 @@
 
     /* --- TYPOGRAFIE --- */
     /* Headings: Playfair Display (clean, elegant) */
-    --font-family-heading: 'Playfair Display', 'Georgia', serif;
+    --font-family-heading: 'Manihot', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
     /* Body: IBM Plex Mono (monotype, informativ) */
     --font-family-body: 'IBM Plex Mono', 'Courier New', monospace;
