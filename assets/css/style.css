@@ -3,6 +3,9 @@
    Nachhaltiges, harmonisches Design
    ============================================ */
 
+/* Import background accents (scoped CSS) */
+@import url("background-accents.css");
+
 /* Importiere Google Fonts */
 /* Typekit fonts are loaded via the HTML <link> to use.typekit.net */
 
@@ -13,32 +16,35 @@
 
 :root {
     /* --- FARBEN --- */
-    /* Primär: Nachhaltigkeit & Natur */
-    --color-primary-dark: #2d5016; /* Dunkelgrün - Natur */
-    --color-primary-medium: #4a7c2e; /* Mittleres Grün */
-    --color-primary-light: #8bc34a; /* Helles Grün - Frisch */
+   /* Primär: preserved for components (not main accent) */
+   --color-primary-dark: #2d5016; /* preserved */
+   --color-primary-medium: #4a7c2e;
+   --color-primary-light: #8bc34a;
 
-    /* Hintergrund & Neutral */
-    --color-cream: #faf8f3; /* Warmes Cremeweiß */
-    --color-white: #ffffff;
-    --color-light-gray: #f5f3f0;
+   /* Global page background */
+   --color-bg: #ffa1eb; /* new global background */
 
-    /* Text & Dunkel */
-    --color-text-primary: #3d3530; /* Erdbraun/Anthrazit - Text */
-    --color-text-secondary: #6b6359; /* Helles Braun */
-    --color-text-muted: #9b9185; /* Sehr helles Braun */
+   /* Hintergrund & Neutral (kept for components but page bg uses --color-bg) */
+   --color-cream: #faf8f3;
+   --color-white: #ffffff;
+   --color-light-gray: #f5f3f0;
 
-    /* Akzent & Energie */
-    --color-accent: #d89b9a; /* Sanftes Rosa */
-    --color-accent-light: #e8bfbe; /* Helles Rosa */
-    --color-accent-dark: #c76d6b; /* Dunkles Rosa */
+   /* Text & Dunkel - ensure contrast on bright pink background */
+   --color-text-primary: #2b002b; /* dark purple for contrast */
+   --color-text-secondary: #6b6359;
+   --color-text-muted: #9b9185;
 
-    /* Zusätzliche Farben */
-    --color-border: #e8dcd3;
-    --color-shadow: rgba(61, 53, 48, 0.1);
-    --color-success: #5a9d6b;
-    --color-error: #c4524b;
-    --color-warning: #d4a84d;
+   /* Akzent & Energie - vibrant pink specified by user */
+   --color-accent: #ff0074; /* vibrant pink */
+   --color-accent-light: #ff66a3;
+   --color-accent-dark: #cc0060;
+
+   /* Zusätzliche Farben */
+   --color-border: #e8dcd3;
+   --color-shadow: rgba(61, 53, 48, 0.1);
+   --color-success: #5a9d6b;
+   --color-error: #c4524b;
+   --color-warning: #d4a84d;
 
     /* --- TYPOGRAFIE --- */
     /* Headings: Playfair Display (clean, elegant) */
@@ -132,11 +138,12 @@ body {
     font-size: var(--fs-base);
     font-weight: var(--fw-normal);
     color: var(--color-text-primary);
-    background-color: var(--color-cream);
+    background-color: var(--color-bg);
     line-height: 1.7;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative; /* allows absolute accents to be positioned relative to document */
 }
 
 /* ============================================
@@ -365,6 +372,8 @@ a:hover {
 .main-content {
     flex: 1 1 auto;
     padding: var(--space-3xl) 0;
+    position: relative; /* contains background accents */
+    z-index: 1;
 }
 
 .main-content .container {
@@ -1382,6 +1391,13 @@ fieldset legend {
     color: var(--color-accent);
 }
 
+/* Slideshow styles (homepage) */
+.slideshow{ position: relative; width: 100%; height: 380px; max-height: 45vh; overflow: hidden; border-radius: var(--radius-md); margin: var(--space-2xl) 0; }
+.slide{ position: absolute; inset: 0; opacity: 0; transition: opacity 800ms ease; }
+.slide img{ width:100%; height:100%; object-fit: cover; display:block; }
+.slide.active{ opacity: 1; z-index:1; }
+@media (prefers-reduced-motion: reduce){ .slide{ transition: none; } }
+
 .text-success {
     color: var(--color-success);
 }
@@ -1527,3 +1543,29 @@ fieldset legend {
         padding: var(--space-md) var(--space-xl);
     }
 }
+
+/* Customer reviews styles */
+.reviews-section{
+    background: rgba(255,255,255,0.06);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-3xl);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.reviews-section h2{ margin-bottom: var(--space-md); color: var(--color-text-primary); }
+.review{ display:flex; gap:var(--space-md); padding: var(--space-md) 0; border-bottom:1px solid var(--color-border); align-items:flex-start; }
+.review:last-child{ border-bottom:none; }
+.review .avatar{ width:48px; height:48px; border-radius:50%; background:var(--color-accent); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.review .body{ flex:1; }
+.review .meta{ font-size: var(--fs-sm); color: var(--color-text-secondary); margin-bottom: var(--space-xs); display:flex; gap:var(--space-sm); align-items:center; }
+.review .stars{ color: var(--color-accent); font-size: 1rem; }
+.review .date{ color: var(--color-text-muted); font-size: var(--fs-xs); }
+.review .comment{ color: var(--color-text-primary); margin-top: var(--space-xs); }
+
+@media (max-width: 480px){
+    .review{ flex-direction: row; gap: var(--space-sm); }
+    .review .avatar{ width:40px; height:40px; }
+}
+
+
