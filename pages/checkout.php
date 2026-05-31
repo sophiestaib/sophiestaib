@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </fieldset>
                     <div class="form-actions">
                         <button type="submit" class="btn btn--primary btn--large">Complete Order</button>
-                        <a href="cart.php" class="btn btn--secondary">Edit Cart</a>
+                        <a href="cart.html" class="btn btn--secondary">Edit Cart</a>
                     </div>
                 </form>
             <?php endif; ?>
