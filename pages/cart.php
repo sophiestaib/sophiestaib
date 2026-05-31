@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <!-- HEADER -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="../index.php" title="Go to home">
+                        <img src="../assets/img/Asset%2016.png" width="80" alt="HUERTA logo">
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.php" class="nav-link">Home</a></li>
+                    <li><a href="recipes.php" class="nav-link">Recipes</a></li>
+                    <li><a href="shop.php" class="nav-link">Shop</a></li>
+                    <li><a href="about.php" class="nav-link">About Us</a></li>
+                    <li>
+                        <a href="cart.php" class="nav-link cart-link active" aria-current="page" title="Cart">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>🛒 Shopping Cart</h1>
+n            <div id="notification"></div>
+n            <!-- CART CONTENT -->
+            <div id="cart-content">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p>
+                </div>
+                <nav class="footer__section" aria-label="Footer navigation">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="recipes.php">Recipes</a></li>
+                        <li><a href="shop.php">Shop</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Legal links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="privacy.php">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.huertaCart) {
+        huertaCart.updateCartCount();
+        huertaCart.renderCart();
+    }
+</script>
+</body>
+</html>
