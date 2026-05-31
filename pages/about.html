@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div id="app">
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="../index.html" title="Go to home">
+                        <img src="../assets/img/Asset%2016.png" width="80" alt="HUERTA logo">
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html" class="nav-link active" aria-current="page">About Us</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link" title="Cart">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>About HUERTA</h1>
+            <section class="about-section">
+                <h2>Our Mission</h2>
+                <p>HUERTA was founded to help people eat more consciously and sustainably. We believe nutritious food in
+                    harmony with nature is better for our bodies and the planet.</p>
+            </section>
+
+            <section class="about-values">
+                <h2>Our Values</h2>
+                <div class="grid grid--3">
+                    <div class="card">
+                        <div class="card__body"><h3>🌱 Sustainability</h3>
+                            <p>We promote regional, seasonal and organic produce to minimize ecological footprint.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body"><h3>🌿 Vegan</h3>
+                            <p>We provide 100% vegan recipes and products to support a healthy, compassionate
+                                lifestyle.</p></div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body"><h3>📚 Education</h3>
+                            <p>We empower people with knowledge and practical tools for seasonal eating.</p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p>
+                </div>
+                <nav class="footer__section" aria-label="Footer navigation">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Legal links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();
+if (window.huertaCart) huertaCart.updateCartCount();</script>
+</body>
+</html>

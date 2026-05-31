@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes | HUERTA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <meta name="description" content="Seasonal vegan recipes by HUERTA - healthy, seasonal and sustainable dishes.">
+</head>
+<body>
+<div id="app">
+    <!-- HEADER -->
+    <header class="header" role="banner">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1>
+                    <a href="../index.html" title="Go to home">
+                        <img src="../assets/img/Asset%2016.png" width="80" alt="HUERTA logo">
+                    </a>
+                </h1>
+            </div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="recipes.html" class="nav-link active" aria-current="page">Recipes</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li>
+                        <a href="cart.html" class="nav-link cart-link" title="Cart">
+                            🛒 <span class="cart-count" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <h1>Seasonal Vegan Recipes</h1>
+            <p class="lead">Delicious, healthy recipes made with seasonal ingredients.</p>
+
+            <section class="recipes-grid" aria-labelledby="recipes-title">
+                <h2 id="recipes-title" class="sr-only">Recipes</h2>
+                <div class="grid grid--3">
+                    <!-- Placeholder recipe card 1 -->
+                    <article class="recipe-card">
+
+                        <div class="recipe-card__image">
+
+                            <img src="../assets/img/recipes/food_calendar_final_Filter-06.png" alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Garbanzos con Espinacas</h3>
+                            <p class="recipe-card__description">A quick & fresh, typical spanish tapas with spinach and chickpeas.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 40 min</span>
+                                <span>👥 3 servings</span>
+                                <span>⭐ Easy</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+
+                            <img src="../assets/img/recipes/food_calendar_final_Filter-14.png" alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Pasta Primavera</h3>
+                            <p class="recipe-card__description">A refreshing pasta salad with asparagus, tomatoes and
+                                zucchini.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 30 min</span>
+                                <span>👥 4 servings</span>
+                                <span>⭐ Easy</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="../assets/img/recipes/food_calendar_final_Filter-18.png" alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Zucchini Chickpeas Curry</h3>
+                            <p class="recipe-card__description">A warming, protein-rich curry with chickpeas and
+                                zucchini.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 45 min</span>
+                                <span>👥 5 servings</span>
+                                <span>⭐ Medium</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder recipe card 3 -->
+
+                    <article class="recipe-card">
+                        <div class="recipe-card__image">
+                            <img src="../assets/img/recipes/food_calendar_final_Filter-24.png" alt="Recipe placeholder" class="recipe-card__image-img">
+                        </div>
+                        <div class="recipe-card__body">
+                            <h3>Pumkin Soup</h3>
+                            <p class="recipe-card__description">A warming tasty Pumkin Soup, perfect comfort food in autumn.</p>
+                            <div class="recipe-info">
+                                <span>⏱️ 30 min</span>
+                                <span>👥 4 servings</span>
+                                <span>⭐ Medium</span>
+                            </div>
+                            <a href="#" class="btn btn--primary btn--small">View Recipe →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Recipe detail panels (hidden by default). Added per request. -->
+            <div id="recipe-details" class="recipe-details">
+                <style>
+                    /* Minimal styles for detail panels - won't affect global site design */
+                    .recipe-detail { display: none; padding: 24px 0; border-top: 1px solid #e9e9e9; }
+                    .recipe-detail .detail-inner { background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+                    .recipe-detail h3 { margin-top: 0; }
+                    .recipe-detail .cols { display:flex; gap:24px; flex-wrap:wrap; }
+                    .recipe-detail .col { flex:1; min-width:220px; }
+                    .recipe-detail ul { margin:0 0 1rem 1.25rem; }
+                </style>
+
+                <!-- Detail 1 -->
+                <section id="detail-1" class="recipe-detail" role="region" aria-labelledby="detail-1-title" aria-hidden="true">
+                    <div class="container detail-inner">
+                        <h3 id="detail-1-title">Garbanzos con Espinacas — Ingredients & Instructions</h3>
+                        <div class="cols">
+                            <div class="col">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>400g canned chickpeas (drained)</li>
+                                    <li>200g fresh spinach</li>
+                                    <li>1 onion, finely chopped</li>
+                                    <li>2 cloves garlic, sliced</li>
+                                    <li>1 tsp smoked paprika</li>
+                                    <li>2 tbsp olive oil, salt & pepper</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Warm oil in a pan. Sauté onion until translucent.</li>
+                                    <li>Add garlic and paprika, cook 1 minute.</li>
+                                    <li>Add chickpeas and a splash of water; simmer 5–7 min.</li>
+                                    <li>Add spinach, cook until wilted. Season to taste and serve.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detail 2 -->
+                <section id="detail-2" class="recipe-detail" role="region" aria-labelledby="detail-2-title" aria-hidden="true">
+                    <div class="container detail-inner">
+                        <h3 id="detail-2-title">Pasta Primavera — Ingredients & Instructions</h3>
+                        <div class="cols">
+                            <div class="col">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>300g pasta (penne or fusilli)</li>
+                                    <li>1 bunch asparagus, trimmed</li>
+                                    <li>1 zucchini, sliced</li>
+                                    <li>150g cherry tomatoes, halved</li>
+                                    <li>2 tbsp olive oil, lemon, salt, pepper</li>
+                                    <li>Fresh basil to finish</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Cook pasta to al dente; reserve 1/2 cup pasta water.</li>
+                                    <li>Sauté asparagus and zucchini in olive oil until tender-crisp.</li>
+                                    <li>Toss vegetables with pasta, tomatoes, lemon juice and reserved water.</li>
+                                    <li>Finish with basil, adjust seasoning and serve warm or chilled.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detail 3 -->
+                <section id="detail-3" class="recipe-detail" role="region" aria-labelledby="detail-3-title" aria-hidden="true">
+                    <div class="container detail-inner">
+                        <h3 id="detail-3-title">Zucchini Chickpeas Curry — Ingredients & Instructions</h3>
+                        <div class="cols">
+                            <div class="col">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>2 medium zucchini, cubed</li>
+                                    <li>1 can chickpeas, drained</li>
+                                    <li>1 onion, chopped; 2 cloves garlic</li>
+                                    <li>1 tbsp curry powder, 1 tsp cumin</li>
+                                    <li>400ml coconut milk, salt, cilantro</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Sauté onion and garlic until soft. Add spices and toast briefly.</li>
+                                    <li>Add zucchini and chickpeas, stir to coat with spices.</li>
+                                    <li>Pour in coconut milk, simmer until zucchini is tender and sauce thickens.</li>
+                                    <li>Garnish with cilantro and serve with rice or flatbread.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detail 4 -->
+                <section id="detail-4" class="recipe-detail" role="region" aria-labelledby="detail-4-title" aria-hidden="true">
+                    <div class="container detail-inner">
+                        <h3 id="detail-4-title">Pumpkin Soup — Ingredients & Instructions</h3>
+                        <div class="cols">
+                            <div class="col">
+                                <h4>Ingredients</h4>
+                                <ul>
+                                    <li>600g pumpkin, peeled and diced</li>
+                                    <li>1 onion, 2 cloves garlic</li>
+                                    <li>600ml vegetable stock, 1 potato (optional for creaminess)</li>
+                                    <li>2 tbsp olive oil, nutmeg, salt & pepper</li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <h4>Instructions</h4>
+                                <ol>
+                                    <li>Sauté onion and garlic in oil, add pumpkin (and potato) and cook briefly.</li>
+                                    <li>Add stock, bring to a boil then simmer until soft (15–20 min).</li>
+                                    <li>Blend until smooth, season, add a pinch of nutmeg and serve warm.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>HUERTA</h3>
+                    <p>Sustainable, seasonal, and vegan nutrition for a life in harmony with nature.</p>
+                </div>
+                <nav class="footer__section" aria-label="Footer navigation">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer__section" aria-label="Legal links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span id="year"></span> HUERTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.huertaCart) huertaCart.updateCartCount();
+</script>
+
+<!-- Toggle script for recipe detail panels (safe, minimal, closes others) -->
+<script>
+    (function(){
+        // Select buttons and detail panels without changing existing HTML
+        var buttons = document.querySelectorAll('.recipe-card .btn');
+        var panels = document.querySelectorAll('.recipe-detail');
+
+        function closeAll() {
+            panels.forEach(function(p){
+                p.style.display = 'none';
+                p.setAttribute('aria-hidden','true');
+            });
+        }
+
+        buttons.forEach(function(btn, idx){
+            btn.addEventListener('click', function(e){
+                e.preventDefault();
+                var id = 'detail-' + (idx + 1);
+                var panel = document.getElementById(id);
+                if (!panel) return;
+
+                var isVisible = panel.style.display === 'block';
+                // close all first
+                closeAll();
+
+                if (!isVisible) {
+                    panel.style.display = 'block';
+                    panel.setAttribute('aria-hidden','false');
+                    // scroll to the panel so it appears below the grid
+                    setTimeout(function(){
+                        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
+                } else {
+                    panel.style.display = 'none';
+                    panel.setAttribute('aria-hidden','true');
+                }
+            });
+        });
+
+        // Close panels if clicking outside (optional small UX improvement)
+        document.addEventListener('click', function(e){
+            // if click is inside a recipe-card or inside a recipe-detail, ignore
+            if (e.target.closest('.recipe-card') || e.target.closest('.recipe-detail')) return;
+            closeAll();
+        });
+    })();
+</script>
+</body>
+</html>
